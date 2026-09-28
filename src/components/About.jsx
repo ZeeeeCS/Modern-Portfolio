@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about" className="site-shell scroll-mt-28 py-28 sm:py-36">
                                <p className="mt-7 max-w-2xl text-base leading-7 text-black/60 dark:text-white/60 sm:text-lg">
-            I’m a Fourth-year data science & AI (SWE) student who enjoys building end-to-end projects — from messy data and models to dashboards people can actually use & Multi-agents.
+            Specializing in data science and AI, transforming raw data into valuable insights through machine learning, statistical analysis, and data visualization to support strategic decision-making and develop AI-driven solutions & Multi-agents , (SWE) who enjoys building end-to-end Applications — from messy data and models to dashboards people can actually use.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
