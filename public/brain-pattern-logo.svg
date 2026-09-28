@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 420" role="img" aria-labelledby="title desc">
+  <title id="title">Ali Ahmed brain pattern logo</title>
+  <desc id="desc">A transparent abstract brain made from neural pathways and glowing nodes.</desc>
+  <defs>
+    <linearGradient id="neural" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="55%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Brain silhouette: intentionally transparent outside the network. -->
+  <g fill="none" stroke="url(#neural)" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="10" d="M252 363c-27 20-77 19-104-4-22-19-25-44-19-65-28-9-44-29-42-55 1-22 15-39 34-48-10-28-1-57 23-74 18-13 40-16 60-9 8-25 30-42 57-43 16-1 30 5 41 16"/>
+    <path stroke-width="10" d="M260 363c27 20 77 19 104-4 22-19 25-44 19-65 28-9 44-29 42-55-1-22-15-39-34-48 10-28 1-57-23-74-18-13-40-16-60-9-8-25-30-42-57-43-16-1-30 5-41 16"/>
+    <path stroke-width="7" d="M255 86v277M246 108c-32 7-33 31-17 44 14 12 11 26-6 35-20 10-22 29-5 41 17 12 13 28-4 37-21 11-16 34 7 42 14 5 17 17 8 30M265 108c32 7 33 31 17 44-14 12-11 26 6 35 20 10 22 29 5 41-17 12-13 28 4 37 21 11 16 34-7 42-14 5-17 17-8 30"/>
+
+    <!-- Left neural pathways -->
+    <path stroke-width="5" d="M234 125l-28 24-39-8M206 149l-8 37-38 17M160 203l-30-10-14 25M198 186l30 21-13 38-38 11M221 245l-11 40-34 17M174 302l-27-14-19 20M214 285l25 30-8 34"/>
+    <!-- Right neural pathways -->
+    <path stroke-width="5" d="M278 125l28 24 39-8M306 149l8 37 38 17M352 203l30-10 14 25M314 186l-30 21 13 38 38 11M291 245l11 40 34 17M338 302l27-14 19 20M298 285l-25 30 8 34"/>
+  </g>
+
+  <!-- Node field -->
+  <g fill="#f8fafc" stroke="url(#neural)" stroke-width="5" filter="url(#soft-glow)">
+    <circle cx="234" cy="125" r="7"/><circle cx="206" cy="149" r="7"/><circle cx="167" cy="141" r="7"/>
+    <circle cx="198" cy="186" r="7"/><circle cx="160" cy="203" r="7"/><circle cx="130" cy="193" r="7"/>
+    <circle cx="228" cy="207" r="7"/><circle cx="215" cy="245" r="7"/><circle cx="177" cy="256" r="7"/>
+    <circle cx="210" cy="285" r="7"/><circle cx="176" cy="302" r="7"/><circle cx="147" cy="288" r="7"/>
+    <circle cx="239" cy="315" r="7"/><circle cx="231" cy="359" r="7"/>
+    <circle cx="278" cy="125" r="7"/><circle cx="306" cy="149" r="7"/><circle cx="345" cy="141" r="7"/>
+    <circle cx="314" cy="186" r="7"/><circle cx="352" cy="203" r="7"/><circle cx="382" cy="193" r="7"/>
+    <circle cx="284" cy="207" r="7"/><circle cx="297" cy="245" r="7"/><circle cx="335" cy="256" r="7"/>
+    <circle cx="302" cy="285" r="7"/><circle cx="336" cy="302" r="7"/><circle cx="365" cy="288" r="7"/>
+    <circle cx="273" cy="315" r="7"/><circle cx="281" cy="359" r="7"/>
+  </g>
+</svg>
