@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { FiArrowUpRight, FiDownload, FiTerminal } from 'react-icons/fi'
 import { site } from '../data/site'
 
-const phrases = ['AI Applications.', 'ML apps.', 'Web apps.', 'Rag systems','Chatbots','with AI-Tools.', 'Multi-agents.']
+const phrases = ['Freelancer', 'AI Applications.', 'ML apps.', 'Web apps.', 'Rag systems','Chatbots','with AI-Tools.', 'Multi-agents.']
 
 function TypingLine() {
   const [phraseIndex, setPhraseIndex] = useState(0)

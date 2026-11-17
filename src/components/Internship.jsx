@@ -29,7 +29,7 @@ const groups = [
     icon: SiScikitlearn,
     description:
       'AI Engineering training focused on machine learning workflows, model development, deployment, and MLOps concepts.',
-    skills: ['Deep Learning', 'PyTorch', 'TensorFlow', 'LLM', 'fine-tuning','Deep Learning'],
+    skills: ['Deep Learning', 'PyTorch', 'TensorFlow', 'LLM', 'fine-tuning'],
   },
   {
     title: 'IoT Project',

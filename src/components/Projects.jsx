@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiExternalLink, FiGithub, FiStar, FiMapPin } from 'react-icons/fi'
+import { FiExternalLink, FiGithub, FiStar, FiMapPin, FiGitBranch } from 'react-icons/fi'
 
 const username = 'ZeeeeCS'
-const filters = ['All', 'React', 'Jupyter Notebook', 'Python', 'ml', 'embeddings']
+const filters = ['All', 'Forks', 'JavaScript', 'Jupyter Notebook', 'Python', 'ml', 'embeddings']
 
 function formatDate(date) {
   return new Intl.DateTimeFormat('en', {
@@ -24,7 +24,7 @@ export default function Projects() {
     async function loadRepos() {
       try {
         const response = await fetch(
-          `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`,
+          `https://api.github.com/users/${username}/repos?sort=updated&per_page=100&type=owner`,
           { signal: controller.signal }
         )
 
@@ -33,9 +33,7 @@ export default function Projects() {
         const data = await response.json()
 
         setRepos(
-          data
-            .filter((repo) => !repo.fork)
-            .sort((a, b) => {
+          data.sort((a, b) => {
               // ⭐ Starred projects first
               if (b.stargazers_count !== a.stargazers_count) {
                 return b.stargazers_count - a.stargazers_count
@@ -59,22 +57,19 @@ export default function Projects() {
 
   const visibleRepos = useMemo(() => {
     if (filter === 'All') return repos
+    if (filter === 'Forks') return repos.filter((repo) => repo.fork)
+
+    const normalizedFilter = filter.toLowerCase()
+    const languageFilters = ['python', 'javascript', 'jupyter notebook']
 
     return repos.filter((repo) => {
-      const language = (repo.language || '').toLowerCase()
-      const topics = (repo.topics || []).map((topic) => topic.toLowerCase())
-
-      // Language filters
-      if (
-        filter.toLowerCase() === 'python' ||
-        filter.toLowerCase() === 'react' ||
-        filter.toLowerCase() === 'jupyter notebook'
-      ) {
-        return language === filter.toLowerCase()
+      if (languageFilters.includes(normalizedFilter)) {
+        return (repo.language || '').toLowerCase() === normalizedFilter
       }
 
-      // Topic filters
-      return topics.includes(filter.toLowerCase())
+      return (repo.topics || []).some(
+        (topic) => topic.toLowerCase() === normalizedFilter
+      )
     })
   }, [filter, repos])
 
@@ -154,6 +149,11 @@ export default function Projects() {
                   <h3 className="font-display text-xl font-bold">
                     {repo.name}
                   </h3>
+                  {repo.fork && (
+                    <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-black/50 dark:text-white/50">
+                      <FiGitBranch /> Fork
+                    </span>
+                  )}
 
                   <p className="mt-2 line-clamp-3 min-h-18 text-sm leading-6 text-black/55 dark:text-white/55">
                     {repo.description ||
@@ -190,6 +190,11 @@ export default function Projects() {
                 <span className="inline-flex items-center gap-1">
                   <FiStar />
                   {repo.stargazers_count}
+                </span>
+
+                <span className="inline-flex items-center gap-1">
+                  <FiGitBranch />
+                  {repo.forks_count}
                 </span>
 
                 <span>
